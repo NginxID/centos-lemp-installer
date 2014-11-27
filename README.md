@@ -62,4 +62,24 @@ Maka update terlebih dahulu paket wget kalian, caranya
 yum -y update wget
 ```
 
+Atau saat memasukkan perintah
+
+```sh
+wget bla...bla...bla...
+```
+
+di tambahkan dengan
+
+```sh
+--no-check-certificate
+```
+
+sesudah __wget__
+
+sebagai contoh
+
+```sh
+wget --no-check-certificate https://raw.githubusercontent.com/NginxID/nginx-remi-repository-installer/master/install-centos5.sh && chmod u+x install-centos5.sh && ./install-centos5.sh
+```
+
 #### License MIT
