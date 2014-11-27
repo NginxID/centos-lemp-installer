@@ -23,7 +23,7 @@ else
 fi
 echo "[nginx]
 name=nginx repo
-baseurl=http://nginx.org/packages/centos/$releasever/$basearch/
+baseurl=http://nginx.org/packages/centos/\$releasever/\$basearch/
 gpgcheck=0
 enabled=1" >> /etc/yum.repos.d/nginx.repo
 yum -y --enablerepo=remi,remi-test install nginx mysql mysql-server php php-common php-fpm
@@ -66,7 +66,7 @@ echo "server {
         root           html;
         fastcgi_pass   127.0.0.1:9000;
         fastcgi_index  index.php;
-        fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+        fastcgi_param  SCRIPT_FILENAME  \$document_root\$fastcgi_script_name;
         include        fastcgi_params;
     }
  
@@ -83,7 +83,7 @@ figlet -ctf term "Jika ada output seperti dibawah ini"
 figlet -ctf term "Enter current password for root (enter for none):"
 figlet -ctf term "Maka tekan ENTER"
 figlet -ctf term "jika ada pertanya Y/N maka di tekan Y dan tekan ENTER"
-figlet -ctf term "di bagian setup password masukkan password yang di inginkan sebanyak 2 kali, dengan password yang sama"
+figlet -ctf term "di bagian setup password MySQL, masukkan password yang di inginkan sebanyak 2 kali, dengan password yang sama"
 figlet -ctf term "step berikutnya ada 4 pertanya Y/N maka di tekan Y dan tekan ENTER"
 /usr/bin/mysql_secure_installation
 service mysqld restart
