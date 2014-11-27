@@ -5,7 +5,7 @@ rpm -Uvh http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-2.noarch
 rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
 echo "[nginx]
 name=nginx repo
-baseurl=http://nginx.org/packages/centos/$releasever/$basearch/
+baseurl=http://nginx.org/packages/centos/\$releasever/\$basearch/
 gpgcheck=0
 enabled=1" >> /etc/yum.repos.d/nginx.repo
 yum -y --enablerepo=remi,remi-test install nginx mysql mysql-server php php-common php-fpm
