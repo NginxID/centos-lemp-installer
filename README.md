@@ -44,3 +44,22 @@ wget https://raw.githubusercontent.com/NginxID/nginx-remi-repository-installer/m
 ```sh
 wget https://raw.githubusercontent.com/NginxID/nginx-remi-repository-installer/master/install.sh && chmod u+x install.sh && ./install.sh
 ```
+
+#### Note
+
+Jika terjadi seperti ini
+
+```sh
+Resolving raw.githubusercontent.com... 23.235.39.133
+Connecting to raw.githubusercontent.com|23.235.39.133|:443... connected.
+ERROR: certificate common name “www.github.com” doesn’t match requested host name “raw.githubusercontent.com”.
+To connect to raw.githubusercontent.com insecurely, use ‘--no-check-certificate’.
+```
+
+Maka update terlebih dahulu paket wget kalian, caranya
+
+```sh
+yum -y update wget
+```
+
+#### License MIT
