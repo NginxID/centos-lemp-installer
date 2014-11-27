@@ -1,0 +1,78 @@
+#!/bin/bash
+# NginxID.com command line installer NGINX for CentOS
+yum clean all && yum -y update && yum -y upgrade && yum -y install figlet
+rpm -Uvh http://dl.fedoraproject.org/pub/epel/5/i386/epel-release-5-4.noarch.rpm
+rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-5.rpm
+echo "[nginx]
+name=nginx repo
+baseurl=http://nginx.org/packages/centos/$releasever/$basearch/
+gpgcheck=0
+enabled=1" >> /etc/yum.repos.d/nginx.repo
+yum -y --enablerepo=remi,remi-test install nginx mysql mysql-server php php-common php-fpm
+yum -y --enablerepo=remi,remi-test install php-mysql php-pgsql php-sqlite php-pecl-memcache php-gd php-mbstring php-mcrypt php-xml php-pecl-apc php-cli php-pear php-pdo
+chkconfig --levels 235 httpd off && service httpd stop
+chkconfig --add nginx && chkconfig --add mysqld && chkconfig --add php-fpm
+chkconfig --levels 235 nginx on && chkconfig --levels 235 mysqld on && chkconfig --levels 235 php-fpm on
+service nginx start && service mysqld start && service php-fpm start
+rm -rf /etc/nginx/conf.d/default.conf
+echo "server {
+    listen       80;
+    server_name  localhost;
+ 
+    #charset koi8-r;
+    #access_log  /var/log/nginx/log/host.access.log  main;
+ 
+    location / {
+        root   /usr/share/nginx/html;
+        index  index.html index.htm;
+    }
+ 
+    error_page  404              /404.html;
+ 
+    # redirect server error pages to the static page /50x.html
+    #
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   /usr/share/nginx/html;
+    }
+ 
+    # proxy the PHP scripts to Apache listening on 127.0.0.1:80
+    #
+    #location ~ \.php$ {
+    #    proxy_pass   http://127.0.0.1;
+    #}
+ 
+    # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+    #
+    location ~ \.php$ {
+        root           html;
+        fastcgi_pass   127.0.0.1:9000;
+        fastcgi_index  index.php;
+        fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+        include        fastcgi_params;
+    }
+ 
+    # deny access to .htaccess files, if Apache's document root
+    # concurs with nginx's one
+    #
+    #location ~ /\.ht {
+    #    deny  all;
+    #}
+}" >> /etc/nginx/conf.d/default.conf
+service nginx restart
+figlet -ctf standard "R E A D M E"
+figlet -ctf term "Jika ada output seperti dibawah ini"
+figlet -ctf term "Enter current password for root (enter for none):"
+figlet -ctf term "Maka tekan ENTER"
+figlet -ctf term "jika ada pertanya Y/N maka di tekan Y dan tekan ENTER"
+figlet -ctf term "di bagian setup password masukkan password yang di inginkan sebanyak 2 kali, dengan password yang sama"
+figlet -ctf term "step berikutnya ada 4 pertanya Y/N maka di tekan Y dan tekan ENTER"
+/usr/bin/mysql_secure_installation
+service mysqld restart
+service mysqld status
+service php-fpm status
+service nginx status
+nginx -t
+figlet -ctf digital "NGINX INDONESIA"
+figlet -ctf term "SELESAI...!!!"
+exit
