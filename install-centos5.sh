@@ -95,7 +95,7 @@ echo "<!DOCTYPE html>
                                                                                              
                                            nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
                                           nginx: configuration file /etc/nginx/nginx.conf test is successful
-                                                                       Thanks to
+                                                                       Thanks to:
                                                             +-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
                                                             |N|g|i|n|x| |I|n|d|o|n|e|s|i|a|
                                                             +-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
@@ -103,7 +103,7 @@ echo "<!DOCTYPE html>
 </pre>
 </body>
 </html>" >> /usr/share/nginx/html/index.html
+figlet -ctf term "Thanks to:"
 figlet -ctf standard "N G I N X"
 figlet -ctf digital "NGINX INDONESIA"
-figlet -ctf term "SELESAI...!!!"
 exit
