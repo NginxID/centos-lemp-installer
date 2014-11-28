@@ -1,6 +1,6 @@
 #!/bin/bash
 # NginxID.com command line installer NGINX for CentOS
-yum clean all && yum -y update && yum -y upgrade && yum -y install figlet
+yum clean all && yum -y update && yum -y upgrade
 rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
 rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
 echo "[nginx]
@@ -10,6 +10,9 @@ gpgcheck=0
 enabled=1" >> /etc/yum.repos.d/nginx.repo
 yum -y --enablerepo=remi,remi-test install nginx mysql mysql-server php php-common php-fpm
 yum -y --enablerepo=remi,remi-test install php-mysql php-pgsql php-sqlite php-pecl-memcache php-gd php-mbstring php-mcrypt php-xml php-pecl-apc php-cli php-pear php-pdo
+sed -i 's/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g' /etc/php.ini
+sed -i 's/user = apache/user = nginx/g' /etc/php-fpm.d/www.conf
+sed -i 's/group = apache/group = nginx/g' /etc/php-fpm.d/www.conf
 chkconfig --levels 235 httpd off && service httpd stop
 chkconfig --add nginx && chkconfig --add mysqld && chkconfig --add php-fpm
 chkconfig --levels 235 nginx on && chkconfig --levels 235 mysqld on && chkconfig --levels 235 php-fpm on
@@ -24,7 +27,7 @@ echo "server {
  
     location / {
         root   /usr/share/nginx/html;
-        index  index.html index.htm;
+        index index.php index.html index.htm;
     }
  
     error_page  404              /404.html;
@@ -60,6 +63,7 @@ echo "server {
     #}
 }" >> /etc/nginx/conf.d/default.conf
 service nginx restart
+yum -y install figlet
 figlet -ctf standard "R E A D M E"
 figlet -ctf term "Jika ada output seperti dibawah ini"
 figlet -ctf term "Enter current password for root (enter for none):"
@@ -73,6 +77,33 @@ service mysqld status
 service php-fpm status
 service nginx status
 nginx -t
+mv /usr/share/nginx/html/index.html /usr/share/nginx/html/index-original.html
+echo "<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Welcome to nginx</title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+    <pre>                                                          _   _    ____   ___   _   _  __  __
+                                                         | \ | |  / ___| |_ _| | \ | | \ \/ /
+                                                         |  \| | | |  _   | |  |  \| |  \  / 
+                                                         | |\  | | |_| |  | |  | |\  |  /  \ 
+                                                         |_| \_|  \____| |___| |_| \_| /_/\_\
+                                                                                             
+                                           nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+                                          nginx: configuration file /etc/nginx/nginx.conf test is successful
+                                                                       Thanks to
+                                                            +-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
+                                                            |N|g|i|n|x| |I|n|d|o|n|e|s|i|a|
+                                                            +-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
+
+</pre>
+</body>
+</html>" >> /usr/share/nginx/html/index.html
+figlet -ctf standard "N G I N X"
 figlet -ctf digital "NGINX INDONESIA"
 figlet -ctf term "SELESAI...!!!"
 exit

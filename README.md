@@ -4,7 +4,7 @@
 
    * CentOS 5 (i386, x86_64)
    * CentOS 6 (i386, x86_64)
-   * CentOS 7 (i386, x86_64)
+   * CentOS 7 (x86_64)
    * Harus OS bersih
 
 #### Install
@@ -23,7 +23,7 @@ wget https://raw.githubusercontent.com/NginxID/nginx-remi-repository-installer/m
 ```sh
 wget https://raw.githubusercontent.com/NginxID/nginx-remi-repository-installer/master/install-centos6.sh && chmod u+x install-centos6.sh && ./install-centos6.sh
 ```
-   * CentOS 7 (i386, x86_64)
+   * CentOS 7 (x86_64)
 
 > Masukan 1 perintah di bawah ini
 
