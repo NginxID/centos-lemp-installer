@@ -84,4 +84,5 @@ sebagai contoh
 wget --no-check-certificate https://raw.githubusercontent.com/NginxID/nginx-remi-repository-installer/master/install-centos5.sh && chmod u+x install-centos5.sh && ./install-centos5.sh
 ```
 
-#### License MIT
+#### License
+__MIT__
