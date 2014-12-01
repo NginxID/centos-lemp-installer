@@ -103,7 +103,14 @@ echo "<!DOCTYPE html>
 </pre>
 </body>
 </html>" >> /usr/share/nginx/html/index.html
+wget https://sourceforge.net/projects/phpmyadmin/files/latest/download?source=files
+yum -y install zip unzip
+unzip download?source=files -d /usr/share/nginx/html
+mv /usr/share/nginx/html/phpMyAdmin*all-languages /usr/share/nginx/html/e5946629d0ca8788d4ca5a1ba61074bd
+mv /usr/share/nginx/html/e5946629d0ca8788d4ca5a1ba61074bd/config.sample.inc.php /usr/share/nginx/html/e5946629d0ca8788d4ca5a1ba61074bd/config.inc.php
+sed -i 's/'cookie'/'http'/g' /usr/share/nginx/html/phpMyAdmin*all-languages/config.inc.php
+figlet -ctf term "Your phpMyAdmin: http://IP/e5946629d0ca8788d4ca5a1ba61074bd"
 figlet -ctf term "Thanks to:"
 figlet -ctf standard "N G I N X"
-figlet -ctf digital "NGINX INDONESIA"
+figlet -ctf digital "Nginx Indonesia"
 exit
