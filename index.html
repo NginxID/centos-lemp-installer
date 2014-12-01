@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <title>Nginx Remi Repository Installer by NginxID</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Nginx Remi Repository Installer</h1>
+        <h2>Nginx Remi Repository Install for CentOS 5/6/7 (Nginx, MySQL, PHP Module) (MariaDB for CentOS 7)</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/NginxID/nginx-remi-repository-installer/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/NginxID/nginx-remi-repository-installer/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/NginxID/nginx-remi-repository-installer" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>
+<a id="nginx-remi-repository-installer" class="anchor" href="#nginx-remi-repository-installer" aria-hidden="true"><span class="octicon octicon-link"></span></a>Nginx Remi Repository Installer</h1>
+
+<h4>
+<a id="syarat" class="anchor" href="#syarat" aria-hidden="true"><span class="octicon octicon-link"></span></a>Syarat</h4>
+
+<ul>
+<li>CentOS 5 (i386, x86_64)</li>
+<li>CentOS 6 (i386, x86_64)</li>
+<li>CentOS 7 (x86_64)</li>
+<li>Harus OS bersih</li>
+</ul>
+
+<h4>
+<a id="install" class="anchor" href="#install" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install</h4>
+
+<ul>
+<li>CentOS 5 (i386, x86_64)</li>
+</ul>
+
+<blockquote>
+<p>Masukan 1 perintah di bawah ini</p>
+</blockquote>
+
+<div class="highlight highlight-sh"><pre>wget https://raw.githubusercontent.com/NginxID/nginx-remi-repository-installer/master/install-centos5.sh <span class="pl-k">&amp;&amp;</span> chmod u+x install-centos5.sh <span class="pl-k">&amp;&amp;</span> ./install-centos5.sh</pre></div>
+
+<ul>
+<li>CentOS 6 (i386, x86_64)</li>
+</ul>
+
+<blockquote>
+<p>Masukan 1 perintah di bawah ini</p>
+</blockquote>
+
+<div class="highlight highlight-sh"><pre>wget https://raw.githubusercontent.com/NginxID/nginx-remi-repository-installer/master/install-centos6.sh <span class="pl-k">&amp;&amp;</span> chmod u+x install-centos6.sh <span class="pl-k">&amp;&amp;</span> ./install-centos6.sh</pre></div>
+
+<ul>
+<li>CentOS 7 (x86_64)</li>
+</ul>
+
+<blockquote>
+<p>Masukan 1 perintah di bawah ini</p>
+</blockquote>
+
+<div class="highlight highlight-sh"><pre>wget https://raw.githubusercontent.com/NginxID/nginx-remi-repository-installer/master/install-centos7.sh <span class="pl-k">&amp;&amp;</span> chmod u+x install-centos7.sh <span class="pl-k">&amp;&amp;</span> ./install-centos7.sh</pre></div>
+
+<h4>
+<a id="alternatif" class="anchor" href="#alternatif" aria-hidden="true"><span class="octicon octicon-link"></span></a>Alternatif</h4>
+
+<blockquote>
+<p>Gunakan <strong>install.sh</strong> di repository ini.</p>
+
+<h5>
+<a id="syaratnya" class="anchor" href="#syaratnya" aria-hidden="true"><span class="octicon octicon-link"></span></a>Syaratnya:</h5>
+
+<ul>
+<li>CentOS 5 (i386, x86_64)</li>
+<li>CentOS 6 (i386, x86_64)</li>
+</ul>
+</blockquote>
+
+<h5>
+<a id="apakah-anda-ingin-menggunakan-installsh-ya" class="anchor" href="#apakah-anda-ingin-menggunakan-installsh-ya" aria-hidden="true"><span class="octicon octicon-link"></span></a>Apakah anda ingin menggunakan <strong>install.sh</strong>? Ya.</h5>
+
+<blockquote>
+<p>Masukan 1 perintah di bawah ini</p>
+
+<div class="highlight highlight-sh"><pre>wget https://raw.githubusercontent.com/NginxID/nginx-remi-repository-installer/master/install.sh <span class="pl-k">&amp;&amp;</span> chmod u+x install.sh <span class="pl-k">&amp;&amp;</span> ./install.sh</pre></div>
+</blockquote>
+
+<hr>
+
+<h4>
+<a id="note" class="anchor" href="#note" aria-hidden="true"><span class="octicon octicon-link"></span></a>Note</h4>
+
+<p>Jika terjadi seperti ini</p>
+
+<div class="highlight highlight-sh"><pre>Resolving raw.githubusercontent.com... 23.235.39.133
+Connecting to raw.githubusercontent.com<span class="pl-k">|</span>23.235.39.133<span class="pl-k">|</span>:443... connected.
+ERROR: certificate common name “www.github.com” doesn’t match requested host name “raw.githubusercontent.com”.
+To connect to raw.githubusercontent.com insecurely, use ‘--no-check-certificate’.</pre></div>
+
+<p>Maka update terlebih dahulu paket wget kalian, caranya</p>
+
+<div class="highlight highlight-sh"><pre>yum -y update wget</pre></div>
+
+<p>Atau saat memasukkan perintah</p>
+
+<div class="highlight highlight-sh"><pre>wget bla...bla...bla...</pre></div>
+
+<p>di tambahkan dengan</p>
+
+<div class="highlight highlight-sh"><pre>--no-check-certificate</pre></div>
+
+<p>sesudah <strong>wget</strong></p>
+
+<p>sebagai contoh</p>
+
+<div class="highlight highlight-sh"><pre>wget --no-check-certificate https://raw.githubusercontent.com/NginxID/nginx-remi-repository-installer/master/install-centos5.sh <span class="pl-k">&amp;&amp;</span> chmod u+x install-centos5.sh <span class="pl-k">&amp;&amp;</span> ./install-centos5.sh</pre></div>
+
+<h4>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h4>
+
+<p><strong>MIT</strong></p>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
