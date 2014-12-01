@@ -45,6 +45,8 @@ wget https://raw.githubusercontent.com/NginxID/nginx-remi-repository-installer/m
 wget https://raw.githubusercontent.com/NginxID/nginx-remi-repository-installer/master/install.sh && chmod u+x install.sh && ./install.sh
 ```
 
+-----
+
 #### Note
 
 Jika terjadi seperti ini

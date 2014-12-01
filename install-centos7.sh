@@ -107,7 +107,7 @@ yum -y install figlet
 figlet -ctf standard "R E A D M E"
 figlet -ctf term "Jika ada output seperti dibawah ini"
 figlet -ctf term "Enter current password for root (enter for none):"
-figlet -ctf term "Maka tekan ENTER"
+figlet -ctf term "maka tekan ENTER"
 figlet -ctf term "jika ada pertanya Y/N maka di tekan Y dan tekan ENTER"
 figlet -ctf term "di bagian setup password MySQL, masukkan password yang di inginkan sebanyak 2 kali, dengan password yang sama"
 figlet -ctf term "step berikutnya ada 4 pertanya Y/N maka di tekan Y dan tekan ENTER"
@@ -118,32 +118,21 @@ systemctl status php-fpm
 systemctl status mariadb
 nginx -t
 mv /usr/share/nginx/html/index.html /usr/share/nginx/html/index-original.html
-echo "<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Welcome to nginx</title>
-    <link rel="stylesheet" href="">
-</head>
-<body>
-    <pre>                                                          _   _    ____   ___   _   _  __  __
-                                                         | \ | |  / ___| |_ _| | \ | | \ \/ /
-                                                         |  \| | | |  _   | |  |  \| |  \  / 
-                                                         | |\  | | |_| |  | |  | |\  |  /  \ 
-                                                         |_| \_|  \____| |___| |_| \_| /_/\_\
-                                                                                             
-                                           nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
-                                          nginx: configuration file /etc/nginx/nginx.conf test is successful
-                                                                       Thanks to
-                                                            +-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
-                                                            |N|g|i|n|x| |I|n|d|o|n|e|s|i|a|
-                                                            +-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
-
-</pre>
-</body>
-</html>" >> /usr/share/nginx/html/index.html
+wget https://raw.githubusercontent.com/NginxID/nginx-remi-repository-installer/master/index.html
+mv index.html /usr/share/nginx/html/
+wget https://sourceforge.net/projects/phpmyadmin/files/latest/download?source=files
+yum -y install zip unzip
+unzip download?source=files -d /usr/share/nginx/html
+mv /usr/share/nginx/html/phpMyAdmin*all-languages /usr/share/nginx/html/e5946629d0ca8788d4ca5a1ba61074bd
+mv /usr/share/nginx/html/e5946629d0ca8788d4ca5a1ba61074bd/config.sample.inc.php /usr/share/nginx/html/e5946629d0ca8788d4ca5a1ba61074bd/config.inc.php
+sed -i 's/'cookie'/'http'/g' /usr/share/nginx/html/phpMyAdmin*all-languages/config.inc.php
+figlet -ctf term "==============================================================="
+figlet -ctf term "Your documents root (default): /usr/share/nginx/html/"
+figlet -ctf term "Your phpMyAdmin: http://IP/e5946629d0ca8788d4ca5a1ba61074bd"
+figlet -ctf term "How to Adding Virtual Hosts: https://asciinema.org/a/14192"
+echo ""
+figlet -ctf term "Thanks to:"
 figlet -ctf standard "N G I N X"
-figlet -ctf digital "NGINX INDONESIA"
-figlet -ctf term "SELESAI...!!!"
+figlet -ctf digital "Nginx Indonesia"
+figlet -ctf term "==============================================================="
 exit
