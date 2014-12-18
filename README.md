@@ -14,35 +14,35 @@
 > Masukan 1 perintah di bawah ini
 
 ```sh
-wget https://raw.githubusercontent.com/NginxID/nginx-remi-repository-installer/master/install-centos5.sh && chmod u+x install-centos5.sh && ./install-centos5.sh
+wget https://raw.githubusercontent.com/NginxID/nginx-remi-repository-installer/master/centos5.sh && chmod u+x centos5.sh && ./centos5.sh
 ```
    * CentOS 6 (i386, x86_64)
 
 > Masukan 1 perintah di bawah ini
 
 ```sh
-wget https://raw.githubusercontent.com/NginxID/nginx-remi-repository-installer/master/install-centos6.sh && chmod u+x install-centos6.sh && ./install-centos6.sh
+wget https://raw.githubusercontent.com/NginxID/nginx-remi-repository-installer/master/centos6.sh && chmod u+x centos6.sh && ./centos6.sh
 ```
    * CentOS 7 (x86_64)
 
 > Masukan 1 perintah di bawah ini
 
 ```sh
-wget https://raw.githubusercontent.com/NginxID/nginx-remi-repository-installer/master/install-centos7.sh && chmod u+x install-centos7.sh && ./install-centos7.sh
+wget https://raw.githubusercontent.com/NginxID/nginx-remi-repository-installer/master/centos7.sh && chmod u+x centos7.sh && ./centos7.sh
 ```
 
 #### Alternatif
 
-> Gunakan __install.sh__ di repository ini.
+> Gunakan __install5_6.sh__ di repository ini.
 ##### Syaratnya:
 - CentOS 5 (i386, x86_64)
 - CentOS 6 (i386, x86_64)
 
-##### Apakah anda ingin menggunakan __install.sh__? Ya.
+##### Apakah anda ingin menggunakan __install5_6.sh__? Ya.
 
 > Masukan 1 perintah di bawah ini
 ```sh
-wget https://raw.githubusercontent.com/NginxID/nginx-remi-repository-installer/master/install.sh && chmod u+x install.sh && ./install.sh
+wget https://raw.githubusercontent.com/NginxID/nginx-remi-repository-installer/master/install5_6.sh && chmod u+x install5_6.sh && ./install5_6.sh
 ```
 
 -----
@@ -81,7 +81,7 @@ sesudah __wget__
 sebagai contoh
 
 ```sh
-wget --no-check-certificate https://raw.githubusercontent.com/NginxID/nginx-remi-repository-installer/master/install-centos5.sh && chmod u+x install-centos5.sh && ./install-centos5.sh
+wget --no-check-certificate https://raw.githubusercontent.com/NginxID/nginx-remi-repository-installer/master/centos5.sh && chmod u+x centos5.sh && ./centos5.sh
 ```
 
 #### License
