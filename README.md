@@ -37,6 +37,7 @@ wget http://nginxid.com/bash/centos7.sh && chmod u+x centos7.sh && ./centos7.sh
 ##### Syaratnya:
 - CentOS 5 (i386, x86_64)
 - CentOS 6 (i386, x86_64)
+- Jika anda sudah menggunakan cara [di atas](https://github.com/NginxID/centos-lemp-installer#install) maka anda tidak perlu melakukan hal ini
 
 ##### Apakah anda ingin menggunakan __install5_6.sh__? Ya.
 
