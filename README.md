@@ -14,21 +14,21 @@
 > Masukan 1 perintah di bawah ini
 
 ```sh
-wget https://raw.githubusercontent.com/NginxID/nginx-remi-repository-installer/master/centos5.sh && chmod u+x centos5.sh && ./centos5.sh
+wget http://nginxid.com/bash/centos5.sh && chmod u+x centos5.sh && ./centos5.sh
 ```
    * CentOS 6 (i386, x86_64)
 
 > Masukan 1 perintah di bawah ini
 
 ```sh
-wget https://raw.githubusercontent.com/NginxID/nginx-remi-repository-installer/master/centos6.sh && chmod u+x centos6.sh && ./centos6.sh
+wget http://nginxid.com/bash/centos6.sh && chmod u+x centos6.sh && ./centos6.sh
 ```
    * CentOS 7 (x86_64)
 
 > Masukan 1 perintah di bawah ini
 
 ```sh
-wget https://raw.githubusercontent.com/NginxID/nginx-remi-repository-installer/master/centos7.sh && chmod u+x centos7.sh && ./centos7.sh
+wget http://nginxid.com/bash/centos7.sh && chmod u+x centos7.sh && ./centos7.sh
 ```
 
 #### Alternatif
@@ -81,7 +81,7 @@ sesudah __wget__
 sebagai contoh
 
 ```sh
-wget --no-check-certificate https://raw.githubusercontent.com/NginxID/nginx-remi-repository-installer/master/centos5.sh && chmod u+x centos5.sh && ./centos5.sh
+wget --no-check-certificate http://nginxid.com/bash/centos5.sh && chmod u+x centos5.sh && ./centos5.sh
 ```
 
 #### License
