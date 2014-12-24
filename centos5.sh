@@ -85,7 +85,7 @@ yum -y install zip unzip
 unzip download?source=files -d /usr/share/nginx/html
 mv /usr/share/nginx/html/phpMyAdmin*all-languages /usr/share/nginx/html/e5946629d0ca8788d4ca5a1ba61074bd
 mv /usr/share/nginx/html/e5946629d0ca8788d4ca5a1ba61074bd/config.sample.inc.php /usr/share/nginx/html/e5946629d0ca8788d4ca5a1ba61074bd/config.inc.php
-sed -i 's/'cookie'/'http'/g' /usr/share/nginx/html/phpMyAdmin*all-languages/config.inc.php
+sed -i 's/'cookie'/'http'/g' /usr/share/nginx/html/e5946629d0ca8788d4ca5a1ba61074bd/config.inc.php
 figlet -ctf term "==============================================================="
 figlet -ctf term "Your documents root (default): /usr/share/nginx/html/"
 figlet -ctf term "Your phpMyAdmin: http://IP/e5946629d0ca8788d4ca5a1ba61074bd"
