@@ -58,7 +58,7 @@ http {
 
     #gzip  on;
 
-    index   index.html index.htm;
+    index index.php index.html index.htm;
 
     # Load modular configuration files from the /etc/nginx/conf.d directory.
     # See http://nginx.org/en/docs/ngx_core_module.html#include
