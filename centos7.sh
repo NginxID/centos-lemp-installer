@@ -1,7 +1,7 @@
 #!/bin/bash
 # NginxID.com command line installer NGINX for CentOS
 yum clean all && yum -y update && yum -y upgrade
-rpm -Uvh http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-2.noarch.rpm
+rpm -Uvh http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.noarch.rpm
 rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
 echo "[nginx]
 name=nginx repo
