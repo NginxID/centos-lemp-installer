@@ -5,7 +5,7 @@
    * CentOS 5 (i386, x86_64)
    * CentOS 6 (i386, x86_64)
    * CentOS 7 (x86_64)
-   * Harus OS bersih
+   * Kopi, Rokok, Cemilan kalau ada
 
 #### Install
 
