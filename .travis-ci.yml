@@ -1,6 +1,13 @@
 language: bash
+
+os:
+  - linux
+
+env:
+  - SH=bash
+
 script:
-  - bash centos5.sh
-  - bash centos6.sh
-  - bash centos7.sh
-  - bash install5_6.sh
+  - ./centos5.sh
+  - ./centos6.sh
+  - ./centos7.sh
+  - ./install5_6.sh
