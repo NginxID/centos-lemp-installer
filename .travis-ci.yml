@@ -1,0 +1,6 @@
+language: bash
+script:
+  - bash centos5.sh
+  - bash centos6.sh
+  - bash centos7.sh
+  - bash install5_6.sh
