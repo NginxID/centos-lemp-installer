@@ -101,12 +101,14 @@ mv index.html /usr/share/nginx/html/
 wget https://sourceforge.net/projects/phpmyadmin/files/latest/download?source=files
 yum -y install zip unzip
 unzip download?source=files -d /usr/share/nginx/html
-mv /usr/share/nginx/html/phpMyAdmin*all-languages /usr/share/nginx/html/e5946629d0ca8788d4ca5a1ba61074bd
-mv /usr/share/nginx/html/e5946629d0ca8788d4ca5a1ba61074bd/config.sample.inc.php /usr/share/nginx/html/e5946629d0ca8788d4ca5a1ba61074bd/config.inc.php
+DIR_PMA="$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)"
+IP_ADDRESS="$(dig +short myip.opendns.com @resolver1.opendns.com)"
+mv /usr/share/nginx/html/phpMyAdmin*all-languages /usr/share/nginx/html/"${DIR_PMA}"
+mv /usr/share/nginx/html/"${DIR_PMA}"/config.sample.inc.php /usr/share/nginx/html/"${DIR_PMA}"/config.inc.php
 sed -i 's/'cookie'/'http'/g' /usr/share/nginx/html/phpMyAdmin*all-languages/config.inc.php
 figlet -ctf term "==============================================================="
 figlet -ctf term "Your documents root (default): /usr/share/nginx/html/"
-figlet -ctf term "Your phpMyAdmin: http://IP/e5946629d0ca8788d4ca5a1ba61074bd"
+figlet -ctf term "Your phpMyAdmin: http://"${IP_ADDRESS}"/"${DIR_PMA}""
 figlet -ctf term "How to Adding Virtual Hosts: https://asciinema.org/a/14192"
 echo ""
 figlet -ctf term "Thanks to:"
